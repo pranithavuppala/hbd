@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #65002d, #18000d 70%);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   PIN LOCK SCREEN
+========================= */
+
+#lockScreen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(circle at center,
+        #78003b,
+        #260014 55%,
+        #090005 100%);
+}
+
+.lock-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 40px 25px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 0 50px rgba(255,50,130,0.45);
+
+    backdrop-filter: blur(12px);
+}
+
+.lock-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.lock-box h1 {
+    color: #ff79ad;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.lock-box p {
+    color: #ffe5ef;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+#pinInput {
+    width: 100%;
+    padding: 15px;
+
+    margin-top: 12px;
+
+    border: 2px solid #ff4d91;
+    border-radius: 30px;
+
+    background: rgba(0,0,0,0.35);
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 23px;
+
+    letter-spacing: 8px;
+
+    outline: none;
+}
+
+#pinInput::placeholder {
+    color: #ffd1df;
+    letter-spacing: 2px;
+}
+
+.lock-button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ff3f83;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px rgba(255,63,131,0.6);
+
+    transition: 0.3s;
+}
+
+.lock-button:hover {
+    transform: scale(1.04);
+}
+
+#wrongPin {
+    color: #ff8db7 !important;
+    min-height: 25px;
+    margin-top: 15px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(
+        rgba(20,0,10,0.35),
+        rgba(20,0,10,0.7)
+        );
+
+    position: relative;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 9vw, 85px);
+
+    color: #ff76aa;
+
+    text-shadow:
+        0 0 20px rgba(255,80,150,0.8);
+
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: clamp(25px, 5vw, 45px);
+
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #ffe4ed;
+}
+
+.birthday-date {
+    margin-top: 25px;
+
+    font-size: 24px !important;
+
+    color: #ffb4cd !important;
+
+    letter-spacing: 4px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 80px 7%;
+}
+
+.section-title {
+    text-align: center;
+
+    font-size: clamp(32px, 6vw, 55px);
+
+    color: #ff72a8;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 15px rgba(255,70,140,0.6);
+}
+
+.section-subtitle {
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: 0 auto 45px;
+
+    color: #ffe3ed;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+/* =========================
+   MEMORY GALLERY
+========================= */
+
+.memories {
+    background:
+        rgba(40,0,20,0.45);
+}
+
+.memory-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 28px;
+}
+
+.memory-card {
+    background:
+        rgba(255,255,255,0.08);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 0 25px rgba(255,60,130,0.18);
+
+    transition: 0.4s;
+}
+
+.memory-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 35px rgba(255,60,130,0.4);
+}
+
+.memory-card img {
+    width: 100%;
+
+    height: 330px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.memory-text {
+    padding: 22px;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    color: #ffe3ed;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-section {
+    text-align: center;
+}
+
+.video-container {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 12px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 0 40px rgba(255,50,130,0.3);
+}
+
+.video-container video {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 18px;
+
+    background: black;
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter-section {
+    background:
+        radial-gradient(
+        circle at center,
+        rgba(130,0,65,0.5),
+        rgba(20,0,10,0.8)
+        );
+}
+
+.letter {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 45px 35px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-radius: 28px;
+
+    border:
+        1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 0 40px rgba(255,50,130,0.25);
+
+    backdrop-filter: blur(8px);
+}
+
+.letter h2 {
+    text-align: center;
+
+    font-size: clamp(30px, 6vw, 48px);
+
+    color: #ff78aa;
+
+    margin-bottom: 35px;
+}
+
+.letter p {
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #ffe8ef;
+
+    margin-bottom: 22px;
+
+    text-align: left;
+}
+
+.signature {
+    text-align: center;
+
+    margin-top: 35px;
+
+    font-size: 22px;
+
+    line-height: 2;
+
+    color: #ff91b8;
+}
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final {
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.final h2 {
+    font-size: clamp(40px, 8vw, 75px);
+
+    color: #ff75aa;
+
+    text-shadow:
+        0 0 25px rgba(255,70,140,0.8);
+
+    margin-bottom: 25px;
+}
+
+.final p {
+    max-width: 750px;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #ffe4ed;
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 1000;
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding: 14px 20px;
+
+    background: #ff3f83;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(255,50,130,0.6);
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 22px;
+
+    pointer-events: none;
+
+    animation: floatHeart 8s linear infinite;
+
+    opacity: 0.75;
+
+    z-index: 5;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .letter {
+        padding: 30px 20px;
+    }
+
+    .letter p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .memory-card img {
+        height: 280px;
+    }
+
+    .lock-box h1 {
+        font-size: 29px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     PIN LOCK
+================================================== -->
+
+<div id="lockScreen">
+
+    <div class="lock-box">
+
+        <div class="lock-icon">
+            🔐❤️
+        </div>
+
+        <h1>
+            A Little Surprise For You
+        </h1>
+
+        <p>
+            This surprise is only for you, Mamma. 🥹❤️
+        </p>
+
+        <p>
+            Enter the secret number to unlock your surprise. 💕
+        </p>
+
+        <input
+            type="password"
+            id="pinInput"
+            maxlength="8"
+            inputmode="numeric"
+            placeholder="Enter PIN"
+        >
+
+        <button
+            class="lock-button"
+            onclick="checkPIN()">
+            🔓 Unlock My Surprise
+        </button>
+
+        <p id="wrongPin"></p>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     MUSIC
+================================================== -->
+
+<audio id="backgroundMusic" loop>
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<button
+    class="music-button"
+    onclick="toggleMusic()">
+
+    🎵 Play Music
+
+</button>
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero">
+
+    <h1>
+        Happy Birthday ❤️
+    </h1>
+
+    <h2>
+        My Dearest Mamma 🎂🥹
+    </h2>
+
+    <p>
+        Today is not just another day.
+        Today is the day the most special person
+        in my life was born. ❤️
+    </p>
+
+    <p class="birthday-date">
+        09 • 09 • 2005 🎂❤️
+    </p>
+
+    <p>
+        I made this little world especially for you
+        because you deserve something as special
+        as the place you hold in my heart. 🫶🏻💕
+    </p>
+
+</section>
+
+
+<!-- ==================================================
+     MEMORIES
+================================================== -->
+
+<section class="memories" id="memories">
+
+    <h2 class="section-title">
+        Our Beautiful Memories 📸❤️
+    </h2>
+
+    <p class="section-subtitle">
+        Every picture has a story, every memory has a feeling,
+        and every moment with you is something I want to keep
+        close to my heart forever. 🥹💕
+    </p>
+
+
+    <div class="memory-grid">
+
+
+        <!-- MEMORY 1 -->
+
+        <div class="memory-card">
+
+            <img
+                src="photos/photo1.jpg"
+                alt="Our Memory 1">
+
+            <div class="memory-text">
+                The beginning of our beautiful memories. ❤️
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY 2 -->
+
+        <div class="memory-card">
+
+            <img
+                src="photos/photo2.jpg"
+                alt="Our Memory 2">
+
+            <div class="memory-text">
+                One of my favorite moments with you. 🥰
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY 3 -->
+
+        <div class="memory-card">
+
+            <img
+                src="photos/photo3.jpg"
+                alt="Our Memory 3">
+
+            <div class="memory-text">
+                A memory I'll always keep close to my heart. 💕
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY 4 -->
+
+        <div class="memory-card">
+
+            <img
+                src="photos/photo4.jpg"
+                alt="Our Memory 4">
+
+            <div class="memory-text">
+                Another beautiful chapter of our story. 🫶🏻❤️
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY 5 -->
+
+        <div class="memory-card">
+
+            <img
+                src="photos/photo5.jpg"
+                alt="Our Memory 5">
+
+            <div class="memory-text">
+                You make even ordinary moments feel special. 🥹💕
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY 6 -->
+
+        <div class="memory-card">
+
+            <img
+                src="photos/photo6.jpg"
+                alt="Our Memory 6">
+
+            <div class="memory-text">
+                One more memory I want to keep forever. ❤️♾️
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     VIDEO
+================================================== -->
+
+<section class="video-section">
+
+    <h2 class="section-title">
+        A Little Video For You 🎥❤️
+    </h2>
+
+    <p class="section-subtitle">
+
+        I made this little video with some of our
+        favorite memories because sometimes pictures
+        cannot say everything that my heart wants to say. 🥹❤️
+
+    </p>
+
+
+    <div class="video-container">
+
+        <video controls>
+
+            <source
+                src="birthday-video.mp4"
+                type="video/mp4">
+
+            Your browser does not support video playback.
+
+        </video>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     LOVE LETTER
+================================================== -->
+
+<section class="letter-section">
+
+    <div class="letter">
+
+        <h2>
+            💌 A Letter From My Heart
+        </h2>
+
+
+        <p>
+            My Dearest Mamma ❤️,
+        </p>
+
+
+        <p>
+            Happy Birthday to the most special person in my life.
+            🎂❤️ Today is not just your birthday... it is the day
+            the person who changed my life was born.
+            And honestly, I feel so lucky that life brought you to me. 🥹💕
+        </p>
+
+
+        <p>
+            Mamma, do you remember the day you proposed to me? 🥺❤️
+            You were the one who took the first step and came into my
+            life with your love. I still feel so special when I think
+            about that moment.
+            You chose me, you trusted me with your heart,
+            and you gave me a beautiful reason to believe in us. 💖
+        </p>
+
+
+        <p>
+            From that moment, you became more than just someone I love.
+            You became my happiness, my comfort, my favorite person,
+            and the person I want to share my little moments with. 🫶🏻❤️
+        </p>
+
+
+        <p>
+            I call you "Mamma" with so much love because that little
+            name has become so special to me. ❤️ Every time I call
+            you Mamma, there is so much love, care and emotion behind
+            those words that I can't even explain properly. 🥹💕
+        </p>
+
+
+        <p>
+            Sometimes I wonder how I got so lucky to have someone like
+            you in my life. Out of all the people in this world,
+            I got you. And that is something I will always be grateful for. 🌎❤️
+        </p>
+
+
+        <p>
+            You have brought so many smiles into my life.
+            Even the smallest conversation with you can make my day better.
+            Your messages, your voice, your silly moments, your care,
+            and even the little things you do without realizing it
+            have become precious to me. 🥰
+        </p>
+
+
+        <p>
+            Mamma, I don't want to lose you. ❤️
+            I don't want to lose the person with whom I have created
+            so many beautiful memories.
+            I don't want to lose our talks, our laughs, our little fights,
+            our cute moments and everything that makes "us" so special. 🥺💗
+        </p>
+
+
+        <p>
+            I know we won't always have perfect days.
+            There may be misunderstandings, arguments and difficult moments.
+            But even during those moments, I want us to remember why
+            we chose each other in the first place. ❤️
+        </p>
+
+
+        <p>
+            You chose me first, Mamma... ❤️
+            and I want you to know that choosing you is one of the
+            most beautiful things that has happened in my life. 🥹💍
+        </p>
+
+
+        <p>
+            I don't just want the beautiful moments with you.
+            I want the ordinary days too.
+            I want the random conversations, the silly jokes,
+            the late-night talks, the celebrations, the adventures,
+            the photographs and all the little memories
+            that we haven't created yet. 🫶🏻💕
+        </p>
+
+
+        <p>
+            I want to see you achieve everything you dream about.
+            I want to see you happy, successful and proud of yourself.
+            And whenever you feel tired or life becomes difficult,
+            I want you to remember that I will always be cheering for you. ❤️
+        </p>
+
+
+        <p>
+            Thank you, Mamma, for choosing me.
+            Thank you for coming into my life.
+            Thank you for loving me.
+            Thank you for giving me memories that I will always treasure. 🥹❤️
+        </p>
+
+
+        <p>
+            You may never fully understand how much you mean to me,
+            because sometimes even a thousand words are not enough
+            to explain what my heart feels for you. 💕
+        </p>
+
+
+        <p>
+            But if there is one thing I want you to remember forever,
+            it is this:
+        </p>
+
+
+        <p style="
+            text-align:center;
+            font-size:26px;
+            color:#ff76a9;
+        ">
+
+            <strong>
+                I am so lucky to have you, Mamma. ❤️🥹
+            </strong>
+
+        </p>
+
+
+        <p style="
+            text-align:center;
+            font-size:24px;
+            color:#ff76a9;
+        ">
+
+            <strong>
+                And I don't want to lose you. 🫂❤️
+            </strong>
+
+        </p>
+
+
+        <p>
+            No matter how many birthdays come and go,
+            I hope I am there to wish you again and again. 🎂❤️
+            I hope we continue creating memories, growing together,
+            supporting each other and choosing each other every day. 🫶🏻
+        </p>
+
+
+        <p>
+            Today, on your birthday, I just want to say:
+        </p>
+
+
+        <p style="
+            text-align:center;
+            font-size:28px;
+            color:#ff76a9;
+        ">
+
+            <strong>
+                Happy Birthday, Mamma! 🎂🎉❤️
+            </strong>
+
+        </p>
+
+
+        <p style="
+            text-align:center;
+            font-size:23px;
+            color:#ffd6e5;
+        ">
+
+            <strong>
+                You are my special person, my happiness,
+                and one of the most beautiful parts of my life. ❤️🌹
+            </strong>
+
+        </p>
+
+
+        <div class="signature">
+
+            Forever yours ❤️<br>
+
+            With all my love 🥹💕<br>
+
+            Always & Forever ❤️♾️
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     FINAL MESSAGE
+================================================== -->
+
+<section class="final">
+
+    <h2>
+        I Love You, Mamma ❤️
+    </h2>
+
+    <p>
+        Thank you for being part of my life.
+        Thank you for choosing me.
+        Thank you for loving me.
+        And thank you for giving me a love
+        that I will always treasure. 🥹❤️
+    </p>
+
+    <br>
+
+    <p>
+        Happy Birthday once again, my Mamma! 🎂🎉❤️
+    </p>
+
+    <br>
+
+    <p>
+        Here's to us, our memories,
+        and all the beautiful moments
+        still waiting for us. 🫶🏻💕
+    </p>
+
+    <br>
+
+    <h3 style="
+        font-size:30px;
+        color:#ff78aa;
+    ">
+        ❤️♾️ Forever Us ♾️❤️
+    </h3>
+
+</section>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+/* =========================
+   PIN
+========================= */
+
+const correctPIN = "2409";
+
+
+function checkPIN() {
+
+    const enteredPIN =
+        document.getElementById("pinInput").value;
+
+    const wrongMessage =
+        document.getElementById("wrongPin");
+
+
+    if (enteredPIN === correctPIN) {
+
+        document.getElementById("lockScreen").style.display =
+            "none";
+
+        document.body.style.overflow =
+            "auto";
+
+
+        /* Try to start music */
+
+        const music =
+            document.getElementById("backgroundMusic");
+
+        music.play().catch(function() {
+
+            console.log(
+                "Music needs user interaction."
+            );
+
+        });
+
+    }
+
+    else {
+
+        wrongMessage.innerHTML =
+            "Wrong number, Mamma ❤️ Try again! 🥺";
+
+        document.getElementById("pinInput").value = "";
+
+    }
+
+}
+
+
+/* =========================
+   ENTER KEY FOR PIN
+========================= */
+
+document.getElementById("pinInput")
+.addEventListener("keypress", function(event) {
+
+    if (event.key === "Enter") {
+
+        checkPIN();
+
+    }
+
+});
+
+
+/* =========================
+   MUSIC
+========================= */
+
+let musicPlaying = false;
+
+
+function toggleMusic() {
+
+    const music =
+        document.getElementById("backgroundMusic");
+
+    const button =
+        document.querySelector(".music-button");
+
+
+    if (musicPlaying) {
+
+        music.pause();
+
+        musicPlaying = false;
+
+        button.innerHTML =
+            "🎵 Play Music";
+
+    }
+
+    else {
+
+        music.play();
+
+        musicPlaying = true;
+
+        button.innerHTML =
+            "⏸️ Pause Music";
+
+    }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.classList.add("heart");
+
+    const hearts = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "💞"
+    ];
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+
+    heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 10000);
+
+}
+
+
+setInterval(createHeart, 700);
+
+
+/* =========================
+   START WITH PAGE LOCKED
+========================= */
+
+document.body.style.overflow = "hidden";
+
+</script>
+
+</body>
+
+</html>
